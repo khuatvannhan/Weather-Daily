@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="forecast">Dự báo</string>
+    <string name="google_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAEwT0AKgrbUlkYJzRkB2_Xv08wj8oi63g</string>
+    <string name="request_data_error">Kết nối bị lỗi</string>
+    <string name="monday">Thứ Hai</string>
+    <string name="tuesday">Thứ Ba</string>
+    <string name="wednesday">Thứ Tư</string>
+    <string name="thursday">Thứ Năm</string>
+    <string name="friday">Thứ Sáu</string>
+    <string name="saturday">Thứ Bảy</string>
+    <string name="sunday">Chủ Nhật</string>
+    <string name="wind_pressure">Gió và Sức ép</string>
+    <string name="wind">Gió</string>
+    <string name="humidity">Độ ẩm</string>
+    <string name="pressure">Sức ép</string>
+    <string name="setting">Cài đặt</string>
+    <string name="refresh">Tải lại</string>
+    <string name="edit_location">Chỉnh sửa vị trí</string>
+    <string name="units">Đơn vị nhiệt độ</string>
+    <string name="version">Phiên bản</string>
+
+    <string name="error_not_found">Lỗi không tìm thấy dữ liệu.</string>
+    <string name="error_connect_api">Lỗi kết nối đến server.</string>
+    <string name="error_get_location">Không thể lấy vị trí</string>
+
+    <string name="title_network_error">Truy cập mạng</string>
+    <string name="title_access_location">Truy cập vị trí</string>
+    <string name="off_gps">Bấm Ok để truy cập vị trí hiện tại</string>
+    <string name="off_network">Kết nối mạng bị lỗi \n Vui lòng click Ok để kiểm tra cài đặt của bạn</string>
+
+    <string name="search">Tìm kiếm</string>
+</resources>

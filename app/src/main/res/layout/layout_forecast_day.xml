@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/txtTimeForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="Day"
+        android:textColor="#FBFBFB"
+        android:textSize="@dimen/_18sdp" />
+
+    <ImageView
+        android:id="@+id/imgForecastDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:src="@drawable/cloud"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/relativeHight"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/relativeLow"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txTempForecastHight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="15"
+            android:textColor="#FBFBFB"
+            android:textSize="@dimen/_18sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_toRightOf="@+id/txTempForecastHight"
+            android:fontFamily="sans-serif-light"
+            android:gravity="start"
+            android:layout_marginTop="1.dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="o"
+            android:textColor="#FBFBFB"
+            android:textSize="@dimen/_10sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="25dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txTempForecastLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="15"
+            android:textColor="#FBFBFB"
+            android:textSize="@dimen/_18sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_toRightOf="@+id/txTempForecastLow"
+            android:fontFamily="sans-serif-light"
+            android:gravity="start"
+            android:layout_marginTop="1.dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="o"
+            android:textColor="#FBFBFB"
+            android:textSize="@dimen/_10sdp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:layout_alignParentBottom="true"
+        android:background="#72685C" />
+</RelativeLayout>

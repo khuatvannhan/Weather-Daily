@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:id="@+id/celsius"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="start"
+            android:paddingTop="12dp"
+            android:text="o"
+            android:textColor="#000"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:text="C"
+            android:textColor="@android:color/black"
+            android:textSize="25dp" />
+    </LinearLayout>
+    <TextView
+        android:layout_below="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#72685C" />
+    <LinearLayout
+        android:id="@+id/fahrenheit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="start"
+            android:paddingTop="12dp"
+            android:text="o"
+            android:textColor="#000"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:text="F"
+            android:textColor="@android:color/black"
+            android:textSize="25dp" />
+    </LinearLayout>
+</LinearLayout>

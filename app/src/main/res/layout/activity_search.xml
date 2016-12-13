@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="#fff"
+        android:minHeight="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/layout_search_video"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_1sdp"
+            android:paddingTop="@dimen/_1sdp">
+
+            <ImageView
+                android:id="@+id/imgBackSearch"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_13sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingTop="@dimen/_13sdp"
+                android:src="@drawable/arrow" />
+
+            <EditText
+                android:id="@+id/autocomplete_places"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_toRightOf="@+id/imgBackSearch"
+                android:background="@drawable/bg_search_video"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_38sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="#848484" />
+
+            <ImageView
+                android:id="@+id/search_video_cancel"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_13sdp"
+                android:clickable="true"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/cross"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorGray3"></View>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <!--  <EditText
+          android:id="@+id/autocomplete_places"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/edit_text_style"
+          android:drawableLeft="@drawable/search"
+          android:drawablePadding="9dp"
+          android:visibility="gone"
+          android:hint="@string/autocomplete_hint"
+          android:paddingLeft="8dp"
+          android:paddingRight="9dp"
+          android:singleLine="true"
+
+          android:textColor="@android:color/primary_text_light"
+          android:textColorHint="@color/grey" />
+
+      <ImageView
+          android:id="@+id/cross"
+          android:layout_width="16dp"
+          android:layout_height="16dp"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="26dp"
+          android:src="@drawable/cross" />
+  -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/autocomplete_places"
+        android:background="@android:color/white"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

@@ -1,4 +1,40 @@
 <resources>
-    <string name="app_name">PlacesAutocomplete</string>
+    <string name="app_name">WeatherDaily</string>
     <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="forecast">Forecast</string>
+    <string name="google_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAEwT0AKgrbUlkYJzRkB2_Xv08wj8oi63g</string>
+    <string name="request_data_error">Connect Server Error</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="wind_pressure">Wind and Pressure</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="setting">Setting</string>
+    <string name="refresh">Refresh</string>
+    <string name="edit_location">Edit Location</string>
+    <string name="units">Units</string>
+    <string name="version">Version</string>
+    <string name="error_not_found">Error not found data.</string>
+    <string name="error_connect_api">Error connect server.</string>
+    <string name="error_get_location">Can not get Location</string>
+
+    <string name="search">Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_network_error">Access Network</string>
+    <string name="title_access_location">Access Loaction</string>
+    <string name="off_gps">Click Ok to enable location access</string>
+    <string name="off_network">Network not available \n Please click Ok to check your settings</string>
+
+    <string name="autocomplete_hint">Search a Place</string>
 </resources>
