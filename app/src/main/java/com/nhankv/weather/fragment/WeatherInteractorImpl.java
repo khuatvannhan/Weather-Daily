@@ -30,12 +30,12 @@ import java.util.Date;
 public class WeatherInteractorImpl implements WeatherInteractor {
     private final String TAG = getClass().getName();
     WeatherView fragmentWeather;
-    private final String RAIN = "https://s-media-cache-ak0.pinimg.com/564x/74/a6/7c/74a67c20ba6293c8ea7ba7b5befd3e1c.jpg";
-    private final String CLOUDY = "https://s-media-cache-ak0.pinimg.com/564x/05/6a/45/056a4542d516759ada692ca80fc5d1f5.jpg";
-    private final String PARTLY_CLOUDY_DAY = "https://s-media-cache-ak0.pinimg.com/564x/b0/7c/66/b07c663983cd64acde835390a8324a15.jpg";
-    private final String PARTLY_CLOUDY_NIGHT = "https://s-media-cache-ak0.pinimg.com/564x/12/07/43/12074318deb8dcc07a3a1a2c374254a9.jpg";
-    private final String CLEAR_DAY = "https://s-media-cache-ak0.pinimg.com/564x/98/61/ee/9861ee9d1306806540f9c1dd7e59d199.jpg";
-    private final String CLEAR_NIGHT = "https://s-media-cache-ak0.pinimg.com/564x/1d/db/8b/1ddb8b077b5230554bbad4a1fb86f648.jpg";
+    private final String RAIN = "http://s-media-cache-ak0.pinimg.com/564x/74/a6/7c/74a67c20ba6293c8ea7ba7b5befd3e1c.jpg";
+    private final String CLOUDY = "http://s-media-cache-ak0.pinimg.com/564x/05/6a/45/056a4542d516759ada692ca80fc5d1f5.jpg";
+    private final String PARTLY_CLOUDY_DAY = "http://s-media-cache-ak0.pinimg.com/564x/b0/7c/66/b07c663983cd64acde835390a8324a15.jpg";
+    private final String PARTLY_CLOUDY_NIGHT = "http://s-media-cache-ak0.pinimg.com/564x/12/07/43/12074318deb8dcc07a3a1a2c374254a9.jpg";
+    private final String CLEAR_DAY = "http://s-media-cache-ak0.pinimg.com/564x/98/61/ee/9861ee9d1306806540f9c1dd7e59d199.jpg";
+    private final String CLEAR_NIGHT = "http://s-media-cache-ak0.pinimg.com/564x/1d/db/8b/1ddb8b077b5230554bbad4a1fb86f648.jpg";
     //private final String CLOUDY_DAY = "https://s-media-cache-ak0.pinimg.com/564x/d0/63/eb/d063ebb2bd75edd18549861189fe7656.jpg";
     //private final String CLOUDY_DAY = "https://s-media-cache-ak0.pinimg.com/564x/3f/cb/95/3fcb95dc9f4cd588fba1b92300f5b292.jpg";
     //private final String CLOUDY_DAY = "https://s-media-cache-ak0.pinimg.com/564x/98/61/ee/9861ee9d1306806540f9c1dd7e59d199.jpg";
@@ -184,7 +184,7 @@ public class WeatherInteractorImpl implements WeatherInteractor {
         txtTempCurrent.setText(temp);
         setIconHour(imgTempCurrent, listDataWeather.getmCurrently().getIcon(), listDataWeather.getmCurrently().getSummary(), (int) convertMiliToHour(listDataWeather.getmCurrently().getTime()));
         AsyncSetWeatherBackground asyncSetWeatherBackground = new AsyncSetWeatherBackground();
-        asyncSetWeatherBackground.execute(listDataWeather.getmCurrently().icon);
+        asyncSetWeatherBackground.execute(listDataWeather.getmCurrently().getIcon());
         textWind.setText(convertWindSpeed(listDataWeather.getmCurrently().getWindSpeed()));
         textPressure.setText(String.valueOf((int) listDataWeather.getmCurrently().getPressure()) + " mb");
         textHumidity.setText(convertHumidity(listDataWeather.getmCurrently().getHumidity()));
@@ -708,7 +708,8 @@ public class WeatherInteractorImpl implements WeatherInteractor {
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
             String url = values[0];
-            Picasso.with(fragmentWeather.getActivityFragment()).load(url).into(new Target() {
+            fragmentWeather.setBackGroundMain(url);
+            /*Picasso.with(fragmentWeather.getActivityFragment()).load(url).into(new Target() {
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                     fragmentWeather.getmMainLayout().setBackground(new BitmapDrawable(fragmentWeather.getActivityFragment().getApplicationContext().getResources(), bitmap));
@@ -723,7 +724,7 @@ public class WeatherInteractorImpl implements WeatherInteractor {
                 public void onPrepareLoad(final Drawable placeHolderDrawable) {
                     Log.d("TAG", "Prepare Load");
                 }
-            });
+            });*/
         }
 
         @Override

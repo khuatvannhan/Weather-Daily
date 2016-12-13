@@ -1,11 +1,12 @@
 package com.nhankv.weather.fragment;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +19,17 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.nhankv.weather.mainactivity.MainActivity;
 import com.nhankv.weather.R;
 import com.nhankv.weather.model.City;
 import com.nhankv.weather.model.Forecast;
 import com.nhankv.weather.model.ListDataWeather;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 /**
  * Created by snowflower on 28/08/2016.
@@ -35,7 +42,7 @@ public class WeatherFragment extends Fragment implements WeatherView {
     private WeatherPresenter mWeatherPresenter;
     public ListDataWeather listDataWeather = new ListDataWeather();
     private ScrollView mScrollMain;
-    private RelativeLayout mMainLayout;
+    //private RelativeLayout mMainLayout;
     private ImageView mImgTempCurrent;
     private ViewGroup mLineForecastTime;
     private ViewGroup mLineForecastDate;
@@ -87,7 +94,7 @@ public class WeatherFragment extends Fragment implements WeatherView {
 
     private void init(View view) {
         mScrollMain = (ScrollView) view.findViewById(R.id.scrollMain);
-        mMainLayout = (RelativeLayout) view.findViewById(R.id.mainLayout);
+        //mMainLayout = (RelativeLayout) view.findViewById(R.id.mainLayout);
         mLineForecastDate = (LinearLayout) view.findViewById(R.id.lineForecastDate);
         mLineForecastTime = (LinearLayout) view.findViewById(R.id.lineForecastTime);
         mImgTempCurrent = (ImageView) view.findViewById(R.id.imgTempCurrent);
@@ -191,13 +198,13 @@ public class WeatherFragment extends Fragment implements WeatherView {
     }
 
     @Override
-    public RelativeLayout getmMainLayout() {
-        return mMainLayout;
+    public LinearLayout getmMainLayout() {
+        return activity.mainContent;
     }
 
     @Override
-    public void setmMainLayout(RelativeLayout mMainLayout) {
-        this.mMainLayout = mMainLayout;
+    public void setmMainLayout(LinearLayout mMainLayout) {
+        activity.mainContent = mMainLayout;
     }
 
     @Override
@@ -328,5 +335,36 @@ public class WeatherFragment extends Fragment implements WeatherView {
     @Override
     public void setmAnimation(Animation mAnimation) {
         this.mAnimation = mAnimation;
+    }
+
+    @Override
+    public void setBackGroundMain(String url) {
+        ImageView imageView = new ImageView(getActivity());
+        Glide.with(getActivity()).load(url)
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap bitmap, GlideAnimation anim) {
+                        // Do something with bitmap here.
+                        activity.mainContent.setBackground(new BitmapDrawable(getActivity().getApplicationContext().getResources(), bitmap));
+                    }
+                });
+
+        /*Picasso.with(getActivity()).load(url).into(new Target() {
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                activity.mainContent.setBackground(new BitmapDrawable(getActivity().getApplicationContext().getResources(), bitmap));
+            }
+
+            @Override
+            public void onBitmapFailed(final Drawable errorDrawable) {
+                Log.d("TAG", "FAILED");
+            }
+
+            @Override
+            public void onPrepareLoad(final Drawable placeHolderDrawable) {
+                Log.d("TAG", "Prepare Load");
+            }
+        });*/
     }
 }

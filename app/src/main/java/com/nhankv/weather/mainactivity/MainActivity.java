@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     private TextView mTxtTitle;
     private ImageView mImgMenu, mImgAdd;
     private RelativeLayout mLayoutToolbar;
+    public LinearLayout mainContent;
     public String temperatureType = "Celsius";
     public double currentLatitude;
     public double currentLongitude;
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         mImgAdd = (ImageView) mLayoutToolbar.findViewById(R.id.imgAdd);
         mImgMenu = (ImageView) mLayoutToolbar.findViewById(R.id.imgMenu);
         mTxtTitle = (TextView) mLayoutToolbar.findViewById(R.id.txtTitle);
-
+        mainContent = (LinearLayout) findViewById(R.id.mainContent);
         mImgMenu.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

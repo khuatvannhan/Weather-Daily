@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -37,9 +38,9 @@ public interface WeatherView {
 
     void setmScrollMain(ScrollView mScrollMain);
 
-    RelativeLayout getmMainLayout();
+    LinearLayout getmMainLayout();
 
-    void setmMainLayout(RelativeLayout mMainLayout);
+    void setmMainLayout(LinearLayout mMainLayout);
 
     ImageView getmImgTempCurrent();
 
@@ -93,4 +94,5 @@ public interface WeatherView {
 
     void setmAnimation(Animation mAnimation);
 
+    void setBackGroundMain(String url);
 }
